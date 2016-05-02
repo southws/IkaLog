@@ -287,7 +287,7 @@ class StatInk(object):
         elif lobby_type == 'private':
             payload['lobby'] = 'private'
 
-        elif context['game']['is_fes'] or (lobby_type == 'festa'):
+        elif context['game'].get('is_fes', False) or (lobby_type == 'festa'):
             payload['lobby'] = 'fest'
 
         elif lobby_type == 'tag':
@@ -396,7 +396,7 @@ class StatInk(object):
             if weapon:
                 payload['weapon'] = weapon
 
-        if context['game']['is_fes']:
+        if context['game'].get('is_fes', False):
             payload['gender'] = me['gender_en']
             payload['fest_title'] = str(me['prefix_en']).lower()
 
