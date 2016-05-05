@@ -148,6 +148,12 @@ def _init_outputs(opts):
     if 'WebSocket' in output_plugins:
         OutputPlugins.append(outputs.WebSocket(**output_args['WebSocket']))
 
+    # HTTP Preview Server (Experimental)
+    if 'HTTPPreviewServer' in output_plugins:
+        OutputPlugins.append(
+            outputs.HTTPPreviewServer(**output_args['HTTPPreviewServer'])
+        )
+
     # Video description for YouTube. It is expected to be used with
     # input.CVFile. Multiple matches in a video is not tested.
     #

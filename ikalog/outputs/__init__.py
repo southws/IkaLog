@@ -28,6 +28,7 @@ from .hue import Hue
 from .printjson import JSON
 from .preview import Screen
 from .preview_detected import PreviewDetected
+from .http_preview_server import HTTPPreviewServer
 from .screenshot import Screenshot
 from .slack import Slack
 from .statink import StatInk
